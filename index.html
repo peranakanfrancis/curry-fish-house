@@ -1038,40 +1038,32 @@
           e.src='//www.google-analytics.com/analytics.js';
           r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
           ga('create','UA-145256520-1');ga('send','pageview');
-        </script>
-<!-- Messenger -->
-        <script>
-  var div = document.createElement('div');
-  div.className = 'fb-customerchat';
-  div.setAttribute('page_id', '1734584573515638');
-  div.setAttribute('ref', '');
-  document.body.appendChild(div);
-  window.fbMessengerPlugins = window.fbMessengerPlugins || {
-    init: function () {
-      FB.init({
-        appId            : '1678638095724206',
-        autoLogAppEvents : true,
-        xfbml            : true,
-        version          : 'v3.0'
-      });
-    }, callable: []
-  };
-  window.fbAsyncInit = window.fbAsyncInit || function () {
-    window.fbMessengerPlugins.callable.forEach(function (item) { item(); });
-    window.fbMessengerPlugins.init();
-  };
-  setTimeout(function () {
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  }, 0);
-</script>
-<!-- End of Messenger -->
+        </script><!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v4.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your customer chat code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="1734584573515638"
+  theme_color="#e54b4b"
+  logged_in_greeting="Hi! Ready to order our delicious fish head curry?"
+  logged_out_greeting="Hi! Ready to order our delicious fish head curry?">
+      </div>
         <script src="https://kit.fontawesome.com/1e4377e6d5.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
